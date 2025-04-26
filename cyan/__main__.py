@@ -88,6 +88,10 @@ def main() -> None:
     "-g", "--remove-encrypted", action="store_true",
     help="only remove encrypted app extensions"
   )
+  parser.add_argument(
+    "-j", "--substrate-only", action="store_true",
+    help="only auto-inject substrate (CydiaSubstrate.framework) if needed"
+  )
 
   parser.add_argument(
     "-c", "--compress", metavar="level", type=int, default=6,

@@ -81,6 +81,13 @@ def main(parser: ArgumentParser) -> None:
       app.fakesign_all()
     if args.thin:
       app.thin_all()
+    if args.substrate_only:
+      app.executable.common = {
+        "substrate.": {
+          "name": "CydiaSubstrate.framework",
+          "path": "@rpath/CydiaSubstrate.framework/CydiaSubstrate"
+        }
+      }
 
     # create subdirectories if necessary
     if "/" in args.o:
